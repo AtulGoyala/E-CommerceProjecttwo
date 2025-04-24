@@ -10,7 +10,7 @@ public class Product {
 
 
     @Column(nullable = false)
-    private double price;
+    private double Price;
 
     @Column(name = "description")
     private String description;
@@ -30,11 +30,11 @@ public class Product {
     }
 
     public double getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.Price = price;
     }
 
     public String getDescription() {
