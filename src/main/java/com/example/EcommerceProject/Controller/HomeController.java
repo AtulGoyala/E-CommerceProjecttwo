@@ -16,21 +16,16 @@ public class HomeController {
     @Autowired
     private ProductService productService;
 
-    // Show the Home page
     @GetMapping({"/", "/home"})
     public String homePage() {
         return "HomePage"; // Render the HomePage template
     }
-
-    // Show the Products page
     @GetMapping("/products")
     public String productPage(Model model) {
         model.addAttribute("productList", productService.getAllProduct());
         return "Products"; // Render the Products template
     }
-
-    // Show the Contact Us page with the form
-    @GetMapping("/contactUs")
+   @GetMapping("/contactUs")
     public String contactPage(Model model) {
         model.addAttribute("message", new Message()); // Bind an empty Message object to the form
         return "ContactUs"; // Render the ContactUs template
@@ -40,21 +35,15 @@ public class HomeController {
     public String sendMessage(@ModelAttribute Message message, Model model) {
 
         model.addAttribute("confirmation", "Your message has been sent successfully!");
-
-
-        return "ContactUs";
+       return "ContactUs";
     }
-
-    // Show the About Us page
     @GetMapping("/aboutUs")
     public String aboutUs() {
-        return "AboutUs"; // Render the AboutUs template
+        return "AboutUs";
     }
-
-    // Show the Login page
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("admin", new Admin()); // Add an empty Admin object to the model
-        return "LoginPage"; // Render the LoginPage template
+        return "LoginPage";
     }
 }
