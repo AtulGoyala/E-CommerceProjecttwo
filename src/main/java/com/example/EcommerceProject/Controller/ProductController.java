@@ -1,5 +1,4 @@
 package com.example.EcommerceProject.Controller;
-
 import com.example.EcommerceProject.Model.Product;
 import com.example.EcommerceProject.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class ProductController {
     @PostMapping("add/product")
     public String addProduct(Product product) {
         productService.createProduct(product);
-        return "/admin/home";
+        return "redirect:/admin/home";
     }
 
     @GetMapping("/update/product/{id}")
@@ -36,12 +35,12 @@ public class ProductController {
     @PostMapping("update/product")
     public String updateProduct(Product product) {
         productService.createProduct(product);
-        return "/admin/home";
+        return "redirect:/admin/home";
     }
 
     @DeleteMapping("/delete/product/{id}")
     public String deleteProdcut(@PathVariable Long id) {
         productService.deleteProduct(id);
-        return "/admin/home";
+        return "redirect:/admin/home";
     }
 }

@@ -5,8 +5,7 @@ import com.example.EcommerceProject.Repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
-@Service // This annotation makes ProductService a Spring-managed bean
+@Service
 public class ProductService {
     @Autowired
     private ProductRepo productrepo;
